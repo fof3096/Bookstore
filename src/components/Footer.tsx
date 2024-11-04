@@ -9,9 +9,6 @@ export default function Footer() {
   return (
     <Container disableGutters maxWidth={false} component={"footer"} sx={{ bgcolor: "#f0f0f0", px: 8, py: 15, mt: 30 }}>
         <Box mx={"auto"} maxWidth={1300} position={"relative"}>
-
-
-
             <Box bgcolor={"black"} px={8} py={4} borderRadius={5} position={"absolute"} top={"-90%"} display={"flex"} justifyContent={"space-between"}>
                 <Typography flexBasis={"60%"} variant='h3' fontWeight={"bold"} color='secondary'>
                     Mantente actualizado sobre nuestras ofertas
@@ -21,11 +18,6 @@ export default function Footer() {
                     <Button variant='contained' color='secondary' sx={{ flexBasis: "50%", bgcolor: "white", borderRadius: 5, fontSize:16,textTransform: "none" }}>Suscríbete al Boletin</Button>
                 </Box>
             </Box>
-
-
-
-
-
 
             <Grid2 container borderBottom={1}>
                 <Grid2 size={4} paddingRight={9}>
@@ -115,6 +107,7 @@ export default function Footer() {
                     </List>
                 </Grid2>
             </Grid2>
+            
             <Box>
                 <Typography>Name © 2024, Todos los Derechos Reservados</Typography>
             </Box>

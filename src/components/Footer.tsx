@@ -109,7 +109,7 @@ export default function Footer() {
             </Grid2>
             
             <Box>
-                <Typography>Name © 2024, Todos los Derechos Reservados</Typography>
+                <Typography color='textSecondary'>Name © 2024, Todos los Derechos Reservados</Typography>
             </Box>
         </Box>
     </Container>

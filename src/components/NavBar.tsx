@@ -8,6 +8,7 @@ export default function NavBar() {
     <AppBar position="static">
       <Toolbar sx={{ mx: "auto", width: "100%", maxWidth: "1300px", py: 3 }}>
         <Typography
+          color="primary.contrastText"
           variant="h3"
           component="div"
         >
@@ -36,7 +37,7 @@ export default function NavBar() {
             justifyContent: 'center',
             right: ".5em",
           }}>
-            <SearchIcon color="success"/>
+            <SearchIcon color="secondary"/>
           </Box>
         </Box>
 
@@ -46,22 +47,22 @@ export default function NavBar() {
           alignItems: "center",
           gap: 2,
         }}>
-          <Link py={1} color="secondary" sx={{ textDecoration: "none" }}>Acceder / Registrarme</Link>
+          <Link py={1} color="primary.contrastText" sx={{ textDecoration: "none" }}>Acceder / Registrarme</Link>
           <Divider orientation="vertical" variant="middle" flexItem sx={{ borderColor: "white" }}/>
-          <Link py={1} color="secondary" sx={{ textDecoration: "none", display: "flex" }}>Lista de deseos <FavoriteIcon sx={{ ml: 1 }}/></Link>
+          <Link py={1} color="primary.contrastText" sx={{ textDecoration: "none", display: "flex" }}>Lista de deseos <FavoriteIcon sx={{ ml: 1 }}/></Link>
           <Divider orientation="vertical" variant="middle" flexItem sx={{ borderColor: "white" }}/>
-          <Link py={1} color="secondary" sx={{ textDecoration: "none", display: "flex" }}>ARS$ 0,00 <ShoppingCartIcon sx={{ ml: 1 }}/></Link>
+          <Link py={1} color="primary.contrastText" sx={{ textDecoration: "none", display: "flex" }}>ARS$ 0,00 <ShoppingCartIcon sx={{ ml: 1 }}/></Link>
         </Box>
       </Toolbar>
-      <Box bgcolor={"black"} py={1}>
+      <Box bgcolor={"secondary.main"} py={1}>
         <Stack direction={"row"} alignItems={"center"} divider={<Divider orientation="vertical" variant="middle" sx={{ borderColor: "white", height: "1em" }}/>} color={"white"} spacing={1} maxWidth={"1300px"} mx={"auto"}>
-          <Link color="inherit" sx={{ textDecoration: "none" }}>Libros</Link>
-          <Link color="inherit" sx={{ textDecoration: "none" }}>Catálogo</Link>
-          <Link color="inherit" sx={{ textDecoration: "none" }}>Ficció</Link>
-          <Link color="inherit" sx={{ textDecoration: "none" }}>Top 100</Link>
-          <Link color="inherit" sx={{ textDecoration: "none" }}>Locales</Link>
-          <Link color="inherit" sx={{ textDecoration: "none" }}>Contacto </Link>
-          <Link color="inherit" sx={{ textDecoration: "none" }}>Mi cuenta</Link>
+          <Link color="secondary.contrastText" sx={{ textDecoration: "none" }}>Libros</Link>
+          <Link color="secondary.contrastText" sx={{ textDecoration: "none" }}>Catálogo</Link>
+          <Link color="secondary.contrastText" sx={{ textDecoration: "none" }}>Ficció</Link>
+          <Link color="secondary.contrastText" sx={{ textDecoration: "none" }}>Top 100</Link>
+          <Link color="secondary.contrastText" sx={{ textDecoration: "none" }}>Locales</Link>
+          <Link color="secondary.contrastText" sx={{ textDecoration: "none" }}>Contacto </Link>
+          <Link color="secondary.contrastText" sx={{ textDecoration: "none" }}>Mi cuenta</Link>
         </Stack>
       </Box>
     </AppBar>

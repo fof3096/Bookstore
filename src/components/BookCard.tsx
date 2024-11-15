@@ -16,7 +16,7 @@ export default function BookCard() {
         <CardContent sx={{ pb: 0 }}>
             <Typography textAlign={"center"} fontSize={"small"} color="textSecondary" gutterBottom>Rowling, Joanne K.</Typography>
             <Typography textAlign={"center"} gutterBottom>HARRY POTTER Y EL PRISIONERO DE...</Typography>
-            <Typography pl={1}>$ 87.999</Typography>
+            <Typography pl={1.5}>$ 87.999</Typography>
         </CardContent>
 
         <CardActions sx={{display: "flex", justifyContent: "center"}}>

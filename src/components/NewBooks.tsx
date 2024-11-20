@@ -1,14 +1,9 @@
-import { Box, styled, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import BookCard from "./BookCard";
 import { useEffect, useState } from "react";
-
-const BookImg = styled('img')(()=>({
-  objectFit: "cover",
-  height: "100%",
-}))
 
 interface Book {
   title: string;

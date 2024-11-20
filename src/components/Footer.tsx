@@ -7,7 +7,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 export default function Footer() {
   return (
-    <Container disableGutters maxWidth={false} component={"footer"} sx={{ bgcolor: "#f0f0f0", px: 8, py: 15, mt: 30 }}>
+    <Container disableGutters maxWidth={false} component={"footer"} sx={{ bgcolor: "#f0f0f0", px: 8, py: 15, mt: 20 }}>
         <Box mx={"auto"} maxWidth={1300} position={"relative"}>
             <Box px={8} py={4} borderRadius={5} position={"absolute"} top={"-90%"} display={"flex"} justifyContent={"space-between"} sx={{ backgroundColor: "secondary.dark" }}>
                 <Typography flexBasis={"60%"} variant='h3' fontWeight={"bold"} color='primary'>

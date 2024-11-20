@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import BookCard from "./BookCard";
-import { useEffect, useState } from "react";
+import { Book } from "@mui/icons-material";
 
 const BookImg = styled('img')(()=>({
   objectFit: "cover",
@@ -19,23 +19,11 @@ interface Book {
   imageLinks: { thumbnail: string };
 }
 
-export default function FeaturedBooks() {
+interface BooksData {
+    volumeInfo: Book
+}
 
-  const [books, setBooks] = useState([])
-
-  useEffect(()=>{
-    const fetchFeaturedBooks = async () =>{
-      try {
-        const response = await fetch("https://www.googleapis.com/books/v1/volumes?q=flowers&projection=full&fields=items(volumeInfo(title,authors,description,categories,imageLinks,language))&maxResults=20")
-        const data = await response.json();
-        setBooks(data.items || [])
-      } catch (error) {
-        console.log("Error al realizar la peticion de libros más vendidos");
-      }
-    }
-
-    fetchFeaturedBooks();
-  },[])
+export default function FeaturedBooks({books} : {books: Array<BooksData>}) {
 
   return (
     <Box>

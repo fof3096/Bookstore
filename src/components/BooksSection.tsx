@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import BookCard from "./BookCard";
-import { useEffect, useState } from "react";
 
 interface Book {
   title: string;
@@ -14,27 +13,15 @@ interface Book {
   imageLinks: { thumbnail: string };
 }
 
-export default function NewBooks() {
+interface BooksData {
+    volumeInfo: Book
+}
 
-  const [books, setBooks] = useState([])
-
-  useEffect(()=>{
-    const fetchFeaturedBooks = async () =>{
-      try {
-        const response = await fetch("https://www.googleapis.com/books/v1/volumes?q=flowers&projection=full&fields=items(volumeInfo(title,authors,description,categories,imageLinks,language))&maxResults=18")
-        const data = await response.json();
-        setBooks(data.items || [])
-      } catch (error) {
-        console.log("Error al realizar la peticion de libros más vendidos");
-      }
-    }
-
-    fetchFeaturedBooks();
-  },[])
+export default function BooksSection({title, books} : {title: string, books: Array<BooksData>}) {
 
   return (
     <Box>
-        <Typography textAlign={"center"} variant="h6" color={"primary"}>Novedades del mes</Typography>
+        <Typography textAlign={"center"} variant="h6" color={"primary"}>{title}</Typography>
 
         <Box display={"flex"} gap={3} height={"425px"}>
             <Swiper
@@ -56,7 +43,7 @@ export default function NewBooks() {
                     <BookCard
                     title={volumeInfo?.title || "Titulo no disponible"}
                     authors={volumeInfo?.authors}
-                    imageLink={volumeInfo?.imageLinks?.thumbnail || "Portada no disponible"}
+                    imageLink={volumeInfo?.imageLinks?.thumbnail || "https://ventadelibros.com.ar/wp-content/uploads/2024/08/9788419275202-600x960.jpg"}
                     />
                 </SwiperSlide>
                 })

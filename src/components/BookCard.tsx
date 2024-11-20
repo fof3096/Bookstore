@@ -23,8 +23,8 @@ export default function BookCarsd({ title, authors, imageLink } : { title: strin
         </CardMedia>
 
         <CardContent sx={{ pb: 0 }}>
-            <Typography textAlign={"center"} fontSize={"small"} color="textSecondary" gutterBottom>{authors ? authors.join(", ").slice(0, 27).trim()+"..." : "TITLE F"}</Typography>
-            <Typography lineHeight={1.2} fontSize={"medium"} textTransform={'uppercase'} textAlign={"center"} gutterBottom height={40}>{title.length > 30 ? title.slice(0, 29).trim()+"..." : title}</Typography>
+            <Typography textAlign={"center"} fontSize={"small"} color="textSecondary" gutterBottom>{authors ? authors.join(", ").slice(0, 23).trim()+"..." : "TITLE F"}</Typography>
+            <Typography lineHeight={1.2} fontSize={"medium"} textTransform={'uppercase'} textAlign={"center"} gutterBottom height={40}>{title.length > 30 ? title.slice(0, 27).trim()+"..." : title}</Typography>
             <Typography pl={1.5} gutterBottom>$ 87.999</Typography>
         </CardContent>
 

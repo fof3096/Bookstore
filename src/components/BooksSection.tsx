@@ -20,8 +20,8 @@ interface BooksData {
 export default function BooksSection({title, books} : {title: string, books: Array<BooksData>}) {
 
   return (
-    <Box>
-        <Typography textAlign={"center"} variant="h6" color={"primary"}>{title}</Typography>
+    <Box mt={5}>
+        <Typography variant="h6" color={"primary"}>{title}</Typography>
 
         <Box display={"flex"} gap={3} height={"425px"}>
             <Swiper

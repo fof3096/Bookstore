@@ -19,10 +19,10 @@ export default function Footer() {
                 </Box>
             </Box>
 
-            <Grid2 container borderBottom={1}>
+            <Grid2 container borderBottom={1} minHeight={209}>
                 <Grid2 size={4} paddingRight={9}>
-                    <Typography mb={1} variant='h4'>Name 📕</Typography>
-                    <Typography mb={3} color='textSecondary'>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</Typography>
+                    <Typography mb={1} variant='h4'>Bull Terrier</Typography>
+                    <Typography mb={3} color='textSecondary'>Descubre un universo de historias, conocimiento e inspiración en nuestra librería. Nos apasiona fomentar la lectura y ofrecer una amplia variedad de libros para todas las edades y gustos.</Typography>
                     <Stack direction={"row"} spacing={1}>
                         <IconButton size='small' sx={{ boxShadow: 1 }}>
                             <InstagramIcon sx={{ fontSize: 18 }}/>
@@ -39,77 +39,53 @@ export default function Footer() {
                     </Stack>
                 </Grid2>
                 <Grid2 size={2}>
-                    <Typography variant='h6'>COMPANY</Typography>
+                    <Typography variant='h6'>NOSOTROS</Typography>
                     <List>
                         <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
+                            <Link color='textSecondary' underline='none' href={"#"}>Locales en la Provincia</Link>
                         </ListItem>
                         <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
+                            <Link color='textSecondary' underline='none' href={"#"}>Trabajar con Nosotros</Link>
                         </ListItem>
                         <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
-                        </ListItem>
-                        <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
+                            <Link color='textSecondary' underline='none' href={"#"}>Politica de Privacidad</Link>
                         </ListItem>
                     </List>
                 </Grid2>
+                
                 <Grid2 size={2}>
-                    <Typography variant='h6'>HELP</Typography>
+                    <Typography variant='h6'>AYUDA</Typography>
                     <List>
                         <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
+                            <Link color='textSecondary' underline='none' href={"#"}>Demora de Envios</Link>
                         </ListItem>
                         <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
+                            <Link color='textSecondary' underline='none' href={"#"}>Devoluciones</Link>
                         </ListItem>
                         <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
-                        </ListItem>
-                        <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
+                            <Link color='textSecondary' underline='none' href={"#"}>Medios de Pago</Link>
                         </ListItem>
                     </List>
                 </Grid2>
+                
                 <Grid2 size={2}>
-                    <Typography variant='h6'>FAQ</Typography>
+                    <Typography variant='h6'>COMPRAS</Typography>
                     <List>
                         <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
+                            <Link color='textSecondary' underline='none' href={"#"}>Promociones Locales</Link>
                         </ListItem>
                         <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
+                            <Link color='textSecondary' underline='none' href={"#"}>Costo de Envios</Link>
                         </ListItem>
                         <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
-                        </ListItem>
-                        <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
-                        </ListItem>
-                    </List>
-                </Grid2>
-                <Grid2 size={2}>
-                    <Typography variant='h6'>RESOURCES</Typography>
-                    <List>
-                        <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
-                        </ListItem>
-                        <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
-                        </ListItem>
-                        <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
-                        </ListItem>
-                        <ListItem disableGutters>
-                            <Link color='textSecondary' underline='none' href={"#"}>About</Link>
+                            <Link color='textSecondary' underline='none' href={"#"}>Cancelacion de Compra</Link>
                         </ListItem>
                     </List>
                 </Grid2>
             </Grid2>
             
             <Box>
-                <Typography color='textSecondary'>Name © 2024, Todos los Derechos Reservados</Typography>
+                <Typography color='textSecondary'>Bull Terrier © 2024, Todos los Derechos Reservados</Typography>
             </Box>
         </Box>
     </Container>

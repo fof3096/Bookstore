@@ -9,10 +9,10 @@ const imgUrls = ["https://www.penguinlibros.com/ar/img/cms/Argentina/Literatura-
 
 export default function Categories() {
   return (
-    <div>
+    <Box mt={10}>
       <Typography color="primary.contrastText" variant="h4" textAlign={"center"} mb={4}>Los mejores libros por temática</Typography>
       <Grid2 position={"relative"} container rowSpacing={2}>
-          <Box position={"absolute"} top={"-15%"} left={"50%"} height={"110%"} width={"100vw"} zIndex={-1} bgcolor={"black"} sx={{ transform: "translateX(-50%)"}}></Box>
+          <Box position={"absolute"} top={"-15%"} left={"50%"} height={"110%"} width={"100vw"} zIndex={-1} bgcolor={"secondary.main"} sx={{ transform: "translateX(-50%)"}}></Box>
           {
               imgUrls.map((url, id)=>(
                   <Grid2 key={id} width={"25%"}>
@@ -21,6 +21,6 @@ export default function Categories() {
               ))
           }
       </Grid2>
-    </div>
+    </Box>
   )
 }

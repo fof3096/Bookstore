@@ -4,6 +4,7 @@ import InfoBar from './InfoBar'
 import FeaturedBooks from './FeaturedBooks'
 import BooksSection from './BooksSection'
 import { useEffect, useState } from "react";
+import Categories from './Categories'
 
 export default function Body() {
   const [books, setBooks] = useState([])
@@ -29,6 +30,7 @@ export default function Body() {
         <FeaturedBooks books={books}/>
         <BooksSection title='Novedades del mes' books={books}/>
         <BooksSection title='Fantasia' books={books}/>
+        <Categories />
     </Box>
   )
 }

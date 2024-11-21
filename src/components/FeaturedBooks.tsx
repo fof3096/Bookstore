@@ -42,10 +42,10 @@ export default function FeaturedBooks({books} : {books: Array<BooksData>}) {
           }}
           >
             {
-              books.map((bookData, id: number)=>{
+              books.map((bookData, i: number)=>{
                 const { volumeInfo }: {volumeInfo: Book} = bookData;
                 
-                return <SwiperSlide key={id}>
+                return <SwiperSlide key={i}>
                   <BookCard
                     title={volumeInfo?.title || "Titulo no disponible"}
                     authors={volumeInfo?.authors}

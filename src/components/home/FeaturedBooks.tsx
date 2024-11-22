@@ -2,7 +2,7 @@ import { Box, styled, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import BookCard from "./common/BookCard";
+import BookCard from "../common/BookCard";
 import { Book } from "@mui/icons-material";
 
 const BookImg = styled('img')(()=>({

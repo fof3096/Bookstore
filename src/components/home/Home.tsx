@@ -6,7 +6,7 @@ import BooksSection from './BooksSection'
 import { useEffect, useState } from "react";
 import Categories from './Categories'
 
-export default function Body() {
+export default function Home() {
   const [books, setBooks] = useState([])
 
   useEffect(()=>{

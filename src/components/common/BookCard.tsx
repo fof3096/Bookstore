@@ -2,7 +2,7 @@ import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 
-export default function BookCarsd({ title, authors, imageLink } : { title: string, authors: Array<string>, imageLink: string }) {
+export default function BookCard({ title, authors, imageLink } : { title: string, authors: Array<string>, imageLink: string }) {
   return (
     <Card sx={{
         bgcolor: "transparent",

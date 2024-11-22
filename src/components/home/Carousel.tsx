@@ -4,6 +4,8 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 
+const imgUrls = ["https://market2.livriz.com/storage/section/1/La%20cocinera%20de%20la%20mansi%C3%B3n_1050x580%20(1).png", "https://market2.livriz.com/storage/section/1/banner_bonelli.jpg", "https://market2.livriz.com/storage/section/1/hankang(1).jpg", "https://market2.livriz.com/storage/section/1/BANNER%2010%20OFF%2020-11.jpg", "https://market2.livriz.com/storage/section/1/banner%20pack%20yarros.jpg", "https://market2.livriz.com/storage/section/1/jardin%20de%20noche.jpg", "https://market2.livriz.com/storage/section/1/paramo.jpg"]
+
 export default function Carousel() {
   return (
     <Swiper
@@ -25,24 +27,13 @@ export default function Carousel() {
       className="swiper_container"
       modules={[Autoplay, EffectCoverflow]}
     >
-      <SwiperSlide>
-        <img src="https://market2.livriz.com/storage/section/1/BLACKWATER.jpg"/>
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://market2.livriz.com/storage/section/1/C%C3%BAspide_Umbriel%201050x580.jpg"/>
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://market2.livriz.com/storage/section/1/banner_theodoros.jpg"/>
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://market2.livriz.com/storage/section/1/BLACKWATER.jpg"/>
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://market2.livriz.com/storage/section/1/C%C3%BAspide_Umbriel%201050x580.jpg"/>
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://market2.livriz.com/storage/section/1/banner_theodoros.jpg"/>
-      </SwiperSlide>
+      {
+        imgUrls.map((url, i)=> (
+          <SwiperSlide key={i}>
+            <img src={url}/>
+          </SwiperSlide>
+        ))
+      }
     </Swiper>
   )
 }

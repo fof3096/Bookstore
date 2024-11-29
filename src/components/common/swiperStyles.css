@@ -1,4 +1,6 @@
 .swiper_container {
+    margin-top: 1em;
+    margin-bottom: 1em;
     width: 100%;
 
     .swiper-slide {

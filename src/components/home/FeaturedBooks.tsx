@@ -56,7 +56,7 @@ export default function FeaturedBooks({books} : {books: Array<BooksData>}) {
             }
           </Swiper>
 
-        <BookImg src="https://market2.livriz.com/storage/section/1/manual%20para%20mujeres(1).jpg"/>
+        <BookImg src="https://market2.livriz.com/storage/section/1/forastera(1).jpg"/>
       </Box>
     </Box>
   )

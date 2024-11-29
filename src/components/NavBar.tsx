@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Divider, InputBase, Link, Menu, Stack, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, ClickAwayListener, Divider, Grow, IconButton, InputBase, Link, Paper, Popper, Stack, Toolbar, Typography } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -26,7 +26,7 @@ export default function NavBar() {
   }
 
   return (
-    <AppBar position="static" sx={{ boxShadow: 0}}>
+    <AppBar position="static" sx={{ boxShadow: 0}} onMouseLeave={handleClose}>
       <Toolbar sx={{ mx: "auto", width: "100%", maxWidth: "1300px", py: 3 }}>
         <Typography
           color="primary.contrastText"
@@ -38,30 +38,31 @@ export default function NavBar() {
           BullTerrier
         </Typography>
 
-        <Box component={"div"} sx={{
+        <Box sx={{
           display: "flex",
           position: "relative",
           mx: 4,
           flexGrow: 1,
-          bgcolor: "#f7f7f7",
-          borderRadius: 1.5
+          bgcolor: "background.default",
+          borderRadius: 1.5,
         }}>
           <InputBase
-            placeholder="Search…"
+            placeholder="Buscar..."
             inputProps={{ 'aria-label': 'search' }}
             sx={{ pl: ".5em", width: "100%" }}
           />
           
-          <Box component={"div"} sx={{
+          <IconButton sx={{
             height: '100%',
             position: 'absolute',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            right: ".5em",
+            right: 0,
+            borderRadius: 0
           }}>
             <SearchIcon color="secondary"/>
-          </Box>
+          </IconButton>
         </Box>
 
         <Box sx={{ 
@@ -74,40 +75,49 @@ export default function NavBar() {
           <Divider orientation="vertical" variant="middle" flexItem sx={{ borderColor: "white" }}/>
           <Link py={1} color="primary.contrastText" component={RouterLink} to={"/lista de deseos"} sx={{ textDecoration: "none", display: "flex" }}>Lista de deseos <FavoriteIcon sx={{ ml: 1 }}/></Link>
           <Divider orientation="vertical" variant="middle" flexItem sx={{ borderColor: "white" }}/>
+          
           <Link
+            id="composition-button"
             component={RouterLink}
-            id="basic-button"
-            aria-controls={isOpen ? 'basic-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={isOpen ? 'true' : undefined}
             to={"/carrito"}
-            onClick={handleClick}
+            aria-haspopup="true"
+            onMouseEnter={handleClick}
             sx={{ textDecoration: "none", display: "flex", color: "primary.contrastText" }}
           >
           {`ARS$ ${price}`}<ShoppingCartIcon sx={{ ml: 1 }}/>
           </Link>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
+
+          <Popper
             open={isOpen}
-            onClose={handleClose}
-            MenuListProps={{
-              'aria-labelledby': 'basic-button',
-            }}
-            sx={{
-              "& .MuiPaper-root": {
-                overflow: "visible",
-              },
-              mt: 1
-            }}
+            anchorEl={anchorEl}
+            role={undefined}
+            placement="bottom-start"
+            transition
+            sx={{ zIndex: 10, bgcolor: "darkblue" }}
+            onMouseLeave={handleClose}
           >
-            <Box position={"absolute"} zIndex={60} bgcolor={"Background"} top={"-5px"} left={"20%"} width={10} height={10} sx={{ transform: "rotate(45deg)" }}></Box>
-            <Box py={0} p={3} display={"flex"} flexDirection={"column"} alignItems={"center"} gap={3} position={"relative"}>
-              <ShoppingBagIcon sx={{ color: "text.disabled", fontSize: 80 }}/>
-              <Typography color="textSecondary">No hay productos en el carrito.</Typography>
-              <Button disableElevation variant="contained" sx={{ fontWeight: "bold" }}>VOLVER A LA TIENDA</Button>
-            </Box>
-          </Menu>
+            {({ TransitionProps, placement }) => (
+              <Grow
+                {...TransitionProps}
+                style={{
+                  transformOrigin: 
+                    placement === 'bottom-start' ? 'left top' : 'left bottom',
+                }}
+              >
+                <Paper sx={{ position: "relative", mt: 1 }}>
+                  <Box position={"absolute"} zIndex={60} bgcolor={"Background"} top={"-5px"} left={"20%"} width={10} height={10} sx={{ transform: "rotate(45deg)" }}></Box>
+                  <ClickAwayListener onClickAway={handleClose}>
+                    <Box py={0} p={3} display={"flex"} flexDirection={"column"} alignItems={"center"} gap={3} position={"relative"}>
+                      <ShoppingBagIcon sx={{ color: "text.disabled", fontSize: 80 }}/>
+                      <Typography color="textSecondary">No hay productos en el carrito.</Typography>
+                      <Link component={RouterLink} to={"/"} sx={{ fontSize: "14px", fontWeight: "bold", textDecoration: "none", bgcolor: "primary.main", color: "primary.contrastText", px: "16px", py: "6px", borderRadius: "4px" }}>VOLVER A LA TIENDA</Link>
+                    </Box>
+                  </ClickAwayListener>
+                </Paper>
+              </Grow>
+            )}
+          </Popper>
+
         </Box>
       </Toolbar>
 

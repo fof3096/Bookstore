@@ -11,6 +11,8 @@ const links = ["/tienda", "/categorías", "/tienda?ordenby=date", "/tienda?categ
 
 export default function NavBar() {
 
+  const price = "0,00"
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLAnchorElement>(null)
 
   const isOpen = Boolean(anchorEl)
@@ -82,7 +84,7 @@ export default function NavBar() {
             onClick={handleClick}
             sx={{ textDecoration: "none", display: "flex", color: "primary.contrastText" }}
           >
-            ARS$ 0,00 <ShoppingCartIcon sx={{ ml: 1 }}/>
+          {`ARS$ ${price}`}<ShoppingCartIcon sx={{ ml: 1 }}/>
           </Link>
           <Menu
             id="basic-menu"

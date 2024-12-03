@@ -93,7 +93,7 @@ export default function NavBar() {
             role={undefined}
             placement="bottom-start"
             transition
-            sx={{ zIndex: 10, bgcolor: "darkblue" }}
+            sx={{ zIndex: 10 }}
             onMouseLeave={handleClose}
           >
             {({ TransitionProps, placement }) => (

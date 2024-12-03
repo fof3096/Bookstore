@@ -1,10 +1,10 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-
+import { Link as RouterLink } from "react-router-dom";
 
 export default function BookCard({ title, authors, imageLink } : { title: string, authors: Array<string>, imageLink: string }) {
   return (
-    <Card sx={{
+    <Card component={RouterLink} to={`tienda/${title}`} sx={{
         bgcolor: "transparent",
         borderRadius: 0,
         boxShadow: 0,
@@ -12,7 +12,8 @@ export default function BookCard({ title, authors, imageLink } : { title: string
         maxWidth: "223px",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center"
+        justifyContent: "center",
+        textDecoration: "none"
       }}>
         <CardMedia
         component={"img"}

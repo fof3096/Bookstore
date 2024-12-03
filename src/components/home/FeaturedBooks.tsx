@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import BookCard from "../common/BookCard";
 import { Book } from "@mui/icons-material";
+import { Link as RouterLink } from "react-router-dom";
 
 const BookImg = styled('img')(()=>({
   objectFit: "cover",
@@ -56,7 +57,9 @@ export default function FeaturedBooks({books} : {books: Array<BooksData>}) {
             }
           </Swiper>
 
-        <BookImg src="https://market2.livriz.com/storage/section/1/forastera(1).jpg"/>
+        <RouterLink to={"/tienda/Forastera"}>
+          <BookImg src="https://market2.livriz.com/storage/section/1/forastera(1).jpg"/>
+        </RouterLink>
       </Box>
     </Box>
   )

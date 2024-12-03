@@ -3,13 +3,22 @@ import '../common/swiperStyles.css';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import { Autoplay, EffectCoverflow } from "swiper/modules";
+import { Link as RouterLink } from "react-router-dom";
 
 const imgUrls = [
   "https://market2.livriz.com/storage/section/1/La%20cocinera%20de%20la%20mansi%C3%B3n_1050x580%20(1).png",
-  "https://market2.livriz.com/storage/section/1/banner_bonelli.jpg",
+  "https://market2.livriz.com/storage/section/1/0003.jpg",
   "https://market2.livriz.com/storage/section/1/hankang(1).jpg",
   "https://market2.livriz.com/storage/section/1/jardin%20de%20noche.jpg",
   "https://market2.livriz.com/storage/section/1/paramo.jpg",
+]
+
+const links = [
+  "EXAMPLE_1",
+  "EXAMPLE_2",
+  "EXAMPLE_3",
+  "EXAMPLE_4",
+  "EXAMPLE_5",
 ]
 
 export default function Carousel() {
@@ -36,7 +45,9 @@ export default function Carousel() {
       {
         imgUrls.map((url, i)=> (
           <SwiperSlide key={i}>
-            <img src={url}/>
+            <RouterLink to={`/tienda/${links[i]}`}>
+              <img src={url}/>
+            </RouterLink>
           </SwiperSlide>
         ))
       }

@@ -3,22 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import BookCard from "../common/BookCard";
-import { Book } from "@mui/icons-material";
 import { Link as RouterLink } from "react-router-dom";
+import { Book } from "../../interfaces/Book";
 
 const BookImg = styled('img')(()=>({
   objectFit: "cover",
   height: "100%",
 }))
-
-interface Book {
-  title: string;
-  description: string;
-  authors: Array<string>;
-  language: string;
-  categories: string;
-  imageLinks: { thumbnail: string };
-}
 
 interface BooksData {
     volumeInfo: Book

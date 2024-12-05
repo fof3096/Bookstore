@@ -3,15 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import BookCard from "../common/BookCard";
-
-interface Book {
-  title: string;
-  description: string;
-  authors: Array<string>;
-  language: string;
-  categories: string;
-  imageLinks: { thumbnail: string };
-}
+import { Book } from "../../interfaces/Book";
 
 interface BooksData {
     volumeInfo: Book

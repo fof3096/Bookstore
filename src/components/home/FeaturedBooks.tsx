@@ -11,11 +11,7 @@ const BookImg = styled('img')(()=>({
   height: "100%",
 }))
 
-interface BooksData {
-    volumeInfo: Book
-}
-
-export default function FeaturedBooks({books} : {books: Array<BooksData>}) {
+export default function FeaturedBooks({books} : {books: Array<Book>}) {
 
   return (
     <Box>
@@ -35,15 +31,11 @@ export default function FeaturedBooks({books} : {books: Array<BooksData>}) {
           >
             {
               books.map((bookData, i: number)=>{
-                const { volumeInfo }: {volumeInfo: Book} = bookData;
-                
-                return <SwiperSlide key={i}>
-                  <BookCard
-                    title={volumeInfo?.title || "Titulo no disponible"}
-                    authors={volumeInfo?.authors}
-                    imageLink={volumeInfo?.imageLinks?.thumbnail || "Portada no disponible"}
-                  />
-                </SwiperSlide>
+                return (
+                  <SwiperSlide key={i}>
+                    <BookCard {...bookData}/>
+                  </SwiperSlide>
+                )
               })
             }
           </Swiper>

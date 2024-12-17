@@ -5,11 +5,7 @@ import 'swiper/css/effect-coverflow';
 import BookCard from "../common/BookCard";
 import { Book } from "../../interfaces/Book";
 
-interface BooksData {
-    volumeInfo: Book
-}
-
-export default function BooksSection({title, books} : {title: string, books: Array<BooksData>}) {
+export default function BooksSection({title, books} : {title: string, books: Array<Book>}) {
 
   return (
     <Box mt={5}>
@@ -29,15 +25,11 @@ export default function BooksSection({title, books} : {title: string, books: Arr
             >
             {
                 books.map((bookData, i: number)=>{
-                const { volumeInfo }: {volumeInfo: Book} = bookData;
-                
-                return <SwiperSlide key={i}>
-                    <BookCard
-                    title={volumeInfo?.title || "Titulo no disponible"}
-                    authors={volumeInfo?.authors}
-                    imageLink={volumeInfo?.imageLinks?.thumbnail || "https://ventadelibros.com.ar/wp-content/uploads/2024/08/9788419275202-600x960.jpg"}
-                    />
-                </SwiperSlide>
+                    return (
+                        <SwiperSlide key={i}>
+                            <BookCard {...bookData}/>
+                        </SwiperSlide>
+                    )
                 })
             }
             </Swiper>

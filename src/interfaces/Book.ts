@@ -2,7 +2,7 @@ export interface Book {
     title: string;
     description: string;
     authors: Array<string>;
-    language: string;
-    categories: string;
-    imageLinks: { thumbnail: string };
+    categories: Array<string>;
+    imageLink: string;
+    price: number;
 }

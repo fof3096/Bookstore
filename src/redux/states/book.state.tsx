@@ -5,9 +5,9 @@ export const BookEmptyState: Book = {
     title: "",
     description: "",
     authors: [""],
-    language: "",
-    categories: "",
-    imageLinks: { thumbnail: "" }
+    categories: [""],
+    imageLink: "",
+    price: 0
 }
 
 // ⬇️⬇️⬇️ REDUCER ⬇️⬇️⬇️
